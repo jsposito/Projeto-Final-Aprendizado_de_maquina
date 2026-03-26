@@ -6,7 +6,7 @@ Este projeto tem como objetivo desenvolver um pipeline completo de aprendizado d
 
 ## Objetivo
 
-Construir um modelo de machine learning capaz de prever a variável **`Qualidade_Ambiental`** a partir das seguintes variáveis:
+Construir um modelo de machine learning capaz de prever a variável `Qualidade_Ambiental` a partir das seguintes variáveis:
 
 - Temperatura
 - Umidade
@@ -42,16 +42,18 @@ Mapeamento aplicado em `Qualidade_Ambiental`:
 Foram treinados e comparados os seguintes modelos:
 
 - Logistic Regression
-- Decision Tree
+- SVM
+- KNN
 - Random Forest
+- Decision Tree
 
 A comparação foi realizada com base nas métricas:
 
-- Accuracy
+- Accuracy de treino, validação e teste
+- F1 de treino, validação e teste
 - Precision Weighted
 - Recall Weighted
-- F1 Weighted
-- F1 Macro
+- F1 médio em validação cruzada
 
 ### 4. Rastreamento com MLflow
 Os experimentos foram monitorados com o **MLflow 3.10.1**, permitindo registrar:
@@ -65,18 +67,45 @@ Os experimentos foram monitorados com o **MLflow 3.10.1**, permitindo registrar:
 ### 5. Seleção do Melhor Modelo
 Após a comparação dos modelos, o algoritmo **Logistic Regression** apresentou o melhor desempenho geral, com os seguintes resultados:
 
-- **Accuracy:** 0.9615
-- **F1 Weighted:** 0.9616
+- **Accuracy de validação:** 0.977413
+- **F1 de validação:** 0.977419
+- **F1 médio em validação cruzada:** 0.975871
 
 Esse modelo foi selecionado como modelo final do projeto.
 
 ### 6. Deploy da Aplicação
 A aplicação final foi disponibilizada no **Hugging Face Spaces** com interface construída em **Gradio**, permitindo ao usuário inserir os valores dos sensores e obter a previsão da qualidade ambiental.
 
+## Resultado dos Modelos
 
-## Estrutura do Projeto
+| Modelo | acc_train | acc_val | acc_test | f1_train | f1_val | f1_test | recall_val | f1_cv |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Logistic | 0.976899 | 0.977413 | 0.977413 | 0.976899 | 0.977419 | 0.977419 | 0.977413 | 0.975871 |
+| SVM | 0.977413 | 0.975873 | 0.975873 | 0.977413 | 0.975882 | 0.975882 | 0.975873 | 0.976646 |
+| KNN | 1.000000 | 0.885524 | 0.885524 | 1.000000 | 0.886230 | 0.886230 | 0.885524 | 0.894029 |
+| RandomForest | 0.988535 | 0.881930 | 0.881930 | 0.988535 | 0.882631 | 0.882631 | 0.881930 | 0.883002 |
+| DecisionTree | 0.978268 | 0.842402 | 0.842402 | 0.978268 | 0.842718 | 0.842718 | 0.842402 | 0.851722 |
 
-```text
+## Ranking Final dos Modelos
+
+1. **Logistic**
+2. **SVM**
+3. **KNN**
+4. **RandomForest**
+5. **DecisionTree**
+
+## Melhor Modelo
+
+O melhor modelo final foi:
+
+- **Logistic Regression**
+
+Principais métricas:
+
+- **Accuracy de validação:** 0.977413
+- **F1 de validação:** 0.977419
+- **F1 médio em validação cruzada:** 0.975871
+
 Projeto-Final-Aprendizado_de_maquina/
 ├── app.py
 ├── README.md
@@ -95,4 +124,3 @@ Projeto-Final-Aprendizado_de_maquina/
     ├── preprocess.py
     ├── make_dataset.py
     └── train_compare.py
-
