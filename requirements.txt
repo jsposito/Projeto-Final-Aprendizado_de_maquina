@@ -6,4 +6,5 @@ seaborn
 mlflow==3.10.1
 joblib
 jupyter
+xgboost
 gradio
