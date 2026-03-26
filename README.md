@@ -17,28 +17,6 @@ Construir um modelo de machine learning capaz de prever a variável **`Qualidade
 - SO2
 - O3
 
-## Estrutura do Projeto
-
-```text
-Projeto-Final-Aprendizado_de_maquina/
-├── app.py
-├── README.md
-├── requirements.txt
-├── artifacts/
-│   └── models/
-│       └── best_model.joblib
-├── data/
-│   ├── raw/
-│   │   └── dataset_ambiental.csv
-│   └── processed/
-│       └── processed_data.csv
-├── notebooks/
-│   └── 01_analise_exploratoria.ipynb
-└── src/
-    ├── preprocess.py
-    ├── make_dataset.py
-    └── train_compare.py
-
 ## Etapas do Projeto
 
 ### 1. Análise Exploratória dos Dados
@@ -94,3 +72,27 @@ Esse modelo foi selecionado como modelo final do projeto.
 
 ### 6. Deploy da Aplicação
 A aplicação final foi disponibilizada no **Hugging Face Spaces** com interface construída em **Gradio**, permitindo ao usuário inserir os valores dos sensores e obter a previsão da qualidade ambiental.
+
+
+## Estrutura do Projeto
+
+```text
+Projeto-Final-Aprendizado_de_maquina/
+├── app.py
+├── README.md
+├── requirements.txt
+├── artifacts/
+│   └── models/
+│       └── best_model.joblib
+├── data/
+│   ├── raw/
+│   │   └── dataset_ambiental.csv
+│   └── processed/
+│       └── processed_data.csv
+├── notebooks/
+│   └── 01_analise_exploratoria.ipynb
+└── src/
+    ├── preprocess.py
+    ├── make_dataset.py
+    └── train_compare.py
+
