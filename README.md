@@ -106,8 +106,12 @@ Principais métricas:
 - **F1 de validação:** 0.977419
 - **F1 médio em validação cruzada:** 0.975871
 
-Projeto-Final-Aprendizado_de_maquina/
 
+
+    ## Estrutura do Projeto
+
+```text
+Projeto-Final-Aprendizado_de_maquina/
 ├── app.py
 ├── README.md
 ├── requirements.txt
